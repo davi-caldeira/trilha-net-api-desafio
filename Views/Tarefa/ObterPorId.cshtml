@@ -1,0 +1,57 @@
+@model trilha_net_api_desafio.Models.Tarefa
+
+@{
+    ViewData["Title"] = "Obter Tarefa por Id";
+}
+
+<h2>Obter Tarefa por Id</h2>
+
+<!-- Formulário para obter tarefa por ID -->
+<div>
+    <form asp-action="ObterPorId" method="get">
+        <div class="form-group">
+            <label for="id">ID da Tarefa:</label>
+            <input type="number" id="id" name="id" class="form-control" />
+        </div><br>
+        <button type="submit" class="btn btn-primary">Buscar Tarefa</button>
+    </form>
+</div>
+
+<br/>
+
+<!-- Tabela para exibir a tarefa filtrada -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Titulo)</th>
+            <th>@Html.DisplayNameFor(model => model.Descricao)</th>
+            <th>@Html.DisplayNameFor(model => model.Data)</th>
+            <th>@Html.DisplayNameFor(model => model.Status)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Id)</td>
+            <td>@Html.DisplayFor(model => model.Titulo)</td>
+            <td>@Html.DisplayFor(model => model.Descricao)</td>
+            <td>@Html.DisplayFor(model => model.Data)</td>
+            <td>@Html.DisplayFor(model => model.Status)</td>
+            <td>
+                <a asp-action="Editar" asp-route-id="@Model.Id">Editar</a> |
+                <a asp-action="Detalhes" asp-route-id="@Model.Id">Detalhes</a> |
+                <a asp-action="Deletar" asp-route-id="@Model.Id">Deletar</a> |
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<hr/>
+
+<br>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+</div>

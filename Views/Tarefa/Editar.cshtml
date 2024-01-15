@@ -1,0 +1,44 @@
+@model trilha_net_api_desafio.Models.Tarefa
+
+@{
+    ViewData["title"] = "Editar Tarefa";
+}
+
+<h1>Editar Tarefa</h1>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar">
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label><br>
+                <input asp-for="Titulo" class="form-label" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label><br>
+                <input asp-for="Descricao" class="form-label" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Data" class="control-label"></label>
+                <input type="date" asp-for="Data" class="datepicker" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input type="checkbox" asp-for="Status" class="form-check-input" />
+            </div>
+            <br>
+            <div>
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr/>
+
+<br>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+</div>

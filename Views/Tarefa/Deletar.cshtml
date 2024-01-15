@@ -1,0 +1,43 @@
+@model trilha_net_api_desafio.Models.Tarefa
+
+@{
+    ViewData["title"] = "Deletar Tarefa";
+}
+
+<h1 style="color: red;">Deseja realmente deletar? Não pode ser desfeito</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(item => item.Titulo)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(item => item.Titulo)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(item => item.Descricao)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(item => item.Descricao)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(item => item.Data)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(item => item.Data)
+        </dt>
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(item => item.Status)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(item => item.Status)
+        </dt>
+    </dl>
+</div>
+
+<form asp-action="Deletar">
+    <input type="submit" value="Deletar" class="btn btn-danger">
+</form>
+
+<a asp-action="Index" class="btn btn-primary">Voltar</a>

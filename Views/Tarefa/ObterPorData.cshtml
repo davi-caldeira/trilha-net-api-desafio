@@ -1,0 +1,81 @@
+@model IEnumerable<trilha_net_api_desafio.Models.Tarefa>
+
+@{
+    ViewData["Title"] = "Obter Tarefa por Data";
+}
+
+<h2>Obter Tarefa por Data</h2>
+
+<!-- Formulário para obter tarefa por ID -->
+<div>
+    <form asp-action="ObterPorData" method="get">
+        <div class="form-group">
+            <label for="Data">Data da Tarefa:</label>
+            <input type="date" id="Data" name="Data" class="form-control" />
+        </div><br>
+        <button type="submit" class="btn btn-primary">Buscar Tarefa</button>
+    </form>
+</div>
+
+<br/>
+
+<!-- Tabela para exibir a tarefa filtrada -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Status)
+                </td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Detalhes" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Deletar" asp-route-id="@item.Id">Deletar</a> |
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br>
+
+<hr/>
+
+<br>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+</div>

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using TrilhaApiDesafio.Models;
+using trilha_net_api_desafio.Models;
 
-namespace TrilhaApiDesafio.Context
+namespace trilha_net_api_desafio.Context
 {
     public class OrganizadorContext : DbContext
     {
